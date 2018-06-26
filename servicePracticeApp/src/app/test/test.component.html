@@ -1,0 +1,21 @@
+
+<h1>Works</h1>
+<ul>
+		<li>This is from the service</li>
+    <li *ngFor="let t of studenttest">
+        {{ t.id }} <br>
+        {{ t.name }} <br>
+        {{ t.question_list }}
+        {{ t.answer}}
+    </li>
+</ul>
+
+<ul>
+	<li>This is from tests in db</li>
+  <li *ngFor="let test of tests">{{ test.name }} THIS IS AWESOME</li>
+</ul>
+
+<ul>
+	<li>Sections should be below</li>
+  <li *ngFor="let s of sections">{{ s.section }} THIS IS AWESOME</li>
+</ul>
