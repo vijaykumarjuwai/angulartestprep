@@ -1,23 +1,35 @@
+<body>
+    <div class="page">
+        <div class="testPage">
+            <div class="passage" *ngFor="let p of passages">
+                <h5>{{ p.header }}</h5>
+                <h4>{{ p.introduction }}</h4>
+            </div>
+            <div class="passage" *ngFor="let p of paragraphs">
+              <ul>
+                <li>{{ p.paragraph }}</li>
+              </ul>             
+            </div> 
+        </div>
+        <div class="questions">
+          <ul *ngFor="let q of questions">
+            <li>{{q.question}}</li>
+            <ul *ngFor="let a of answers">
+              <input type="radio" name="choice">{{a.answer}}
+            </ul>
+          </ul>
+        </div>       
+    </div>
+</body>
 
-<h1>Works</h1>
-<ul>
-		<li>This is from the service</li>
-    <li *ngFor="let t of studenttest">
-        {{ t.id }} <br>
-        {{ t.name }} <br>
-        {{ t.question_list }}
-        {{ t.answer}}
-    </li>
-</ul>
 
-<ul>
+
+
+
+
+<!-- <ul>
 	<li><b>This is from tests in db</b></li>
   <li *ngFor="let test of tests">{{ test.name }} TESTS</li>
-</ul>
-
-<ul>
-	<li><b>Sections should be below</b>></li>
-  <li *ngFor="let s of sections">{{ s.section }} {{ s.test_id }} SECTIONS</li>
 </ul>
 
 <ul>
@@ -41,4 +53,4 @@
   <ul>
     <li *ngFor="let a of answers">{{ a.answer }} <br> {{a.correct}} </li>
   </ul>
-</ul>
+</ul> -->

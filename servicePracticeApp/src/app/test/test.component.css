@@ -1,0 +1,25 @@
+ul { list-style-type: none; margin-bottom: 5px;}
+li { margin: none; padding: none; margin-bottom: 5px;}
+
+.page {
+   background-color: #FAFAF4;  
+   font-family:  sans-serif;
+   display: flex;
+}
+
+.passage { 
+    padding-left: 5%;
+    padding-right: 3%;
+    color: black;
+    width: 50%;
+    border: solid blue;
+}
+
+.questions { 
+    color: black;
+    display: flex;
+    width: 50%;
+    border: solid red;
+    padding-top: 5%;
+    padding-right: 10%;
+}
