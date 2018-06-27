@@ -11,16 +11,34 @@
 </ul>
 
 <ul>
-	<li>This is from tests in db</li>
+	<li><b>This is from tests in db</b></li>
   <li *ngFor="let test of tests">{{ test.name }} TESTS</li>
 </ul>
 
 <ul>
-	<li>Sections should be below</li>
-  <li *ngFor="let s of sections">{{ s.section }} GAP {{ s.test_id }} SECTIONS</li>
+	<li><b>Sections should be below</b>></li>
+  <li *ngFor="let s of sections">{{ s.section }} {{ s.test_id }} SECTIONS</li>
 </ul>
 
 <ul>
-  <li>Passages</li>
-  <li *ngFor="let p of passages">{{ p.name }} PASSAGES</li>
+  <li><b>Passages</b></li>
+  <li *ngFor="let p of passages">{{ p.name }} PASSAGE Name</li>
+  <li *ngFor="let p of passages">{{ p.header }} PASSAGE Header</li>
+  <li *ngFor="let p of passages">{{ p.introduction }} PASSAGE Introduction</li>
+</ul>
+
+<ul>
+  <li><b>Paragraphs</b></li>
+  <li *ngFor="let p of paragraphs">{{ p.paragraph }} Paragraphs</li>
+</ul>
+
+<ul>
+  <li><b>Questions</b></li>
+  <li *ngFor="let q of questions">{{ q.question }} Questions</li>
+</ul>
+<ul>
+  <li><b>Answers</b></li>
+  <ul>
+    <li *ngFor="let a of answers">{{ a.answer }} <br> {{a.correct}} </li>
+  </ul>
 </ul>

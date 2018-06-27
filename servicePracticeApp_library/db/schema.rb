@@ -10,17 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180627024902) do
+ActiveRecord::Schema.define(version: 20180627052551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer"
+    t.boolean "correct"
+    t.bigint "passage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["passage_id"], name: "index_answers_on_passage_id"
+  end
+
+  create_table "paragraphs", force: :cascade do |t|
+    t.string "paragraph"
+    t.bigint "passage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["passage_id"], name: "index_paragraphs_on_passage_id"
+  end
 
   create_table "passages", force: :cascade do |t|
     t.string "name"
     t.bigint "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "header"
+    t.string "introduction"
     t.index ["section_id"], name: "index_passages_on_section_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.bigint "passage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["passage_id"], name: "index_questions_on_passage_id"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -36,6 +63,9 @@ ActiveRecord::Schema.define(version: 20180627024902) do
     t.string "name"
   end
 
+  add_foreign_key "answers", "passages"
+  add_foreign_key "paragraphs", "passages"
   add_foreign_key "passages", "sections"
+  add_foreign_key "questions", "passages"
   add_foreign_key "sections", "tests"
 end

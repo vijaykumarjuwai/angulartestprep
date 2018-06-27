@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
+  resources :paragraphs
   resources :passages
   resources :sections
   resources :tests

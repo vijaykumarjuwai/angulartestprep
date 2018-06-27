@@ -62,19 +62,25 @@ Section.create!([
 ])
 
 Passage.create!([
-	{ name: 'Passage 1', section: Section.where("section = 'Reading'").first }
+	{ name: 'Passage 1', header: 'Questions 1-10 are based on the following passage.', introduction: 'This passage is adapted from Daniyal Mueenuddin, “Nawabdin Electrician.” ©2009 by Daniyal Mueenuddin.', section: Section.where("section = 'Reading'").first }
 ])
 
-# Paragraph.create!([
-# 	{ paragraph: "Another man might have thrown up his hands—but not Nawabdin. His twelve daughters acted as a spur to his genius, and he looked with satisfaction in the mirror each morning at the face of a warrior going out to do battle. Nawab of course knew that he must proliferate his sources of revenue—the salary he received from K. K. Harouni for tending the tube wells would not even begin to suffice. He set up a little one-room flour mill, run off a condemned electric motor—condemned by him. He tried his hand at fish-farming in a little pond at the edge of his master’s fields. He bought broken radios, fixed them, and resold them. He did not demur even when asked to fix watches, though that enterprise did spectacularly badly,and in factearned him more kicks than kudos, for no watch he took apart ever kept time again.",
-# 		passage: Passage.where("name = 'Passage 1'").first
-# 	 }
-# ])
+Paragraph.create!([
+	{ paragraph: "Another man might have thrown up his hands—but not Nawabdin. His twelve daughters acted as a spur to his genius, and he looked with satisfaction in the mirror each morning at the face of a warrior going out to do battle. Nawab of course knew that he must proliferate his sources of revenue—the salary he received from K. K. Harouni for tending the tube wells would not even begin to suffice. He set up a little one-room flour mill, run off a condemned electric motor—condemned by him. He tried his hand at fish-farming in a little pond at the edge of his master’s fields. He bought broken radios, fixed them, and resold them. He did not demur even when asked to fix watches, though that enterprise did spectacularly badly,and in factearned him more kicks than kudos, for no watch he took apart ever kept time again.",
+		passage: Passage.where("name = 'Passage 1'").first
+	 }
+])
 
-# Question.create! ([
-# 	{ question: "The main purpose of the first paragraph is to", 
-# 		passage: Passage.where("name = 'Passage 1'").first}
-# ])
+Question.create!([
+	{ question: "The main purpose of the first paragraph is to", passage: Passage.where("name = 'Passage 1'").first }
+])
+
+Answer.create!([
+	{ answer: "characterize Nawab as a loving father.", correct: false, passage: Passage.where("name = 'Passage 1'").first },
+	{ answer: "outline the schedule of a typical day in Nawab’s life", correct: false, passage: Passage.where("name = 'Passage 1'").first },
+	{ answer: "describe Nawab’s various moneymaking ventures.", correct: true, passage: Passage.where("name = 'Passage 1'").first },
+	{ answer: "contrast Nawab’s and Harouni’s lifestyles.", correct: false, passage: Passage.where("name = 'Passage 1'").first }
+])
 
 
 
