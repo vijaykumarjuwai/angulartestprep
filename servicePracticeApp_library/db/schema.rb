@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180622074520) do
+ActiveRecord::Schema.define(version: 20180627024902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "sections", force: :cascade do |t|
-    t.string "section"
+  create_table "passages", force: :cascade do |t|
+    t.string "name"
+    t.bigint "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "test"
+    t.index ["section_id"], name: "index_passages_on_section_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "section"
+    t.bigint "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_sections_on_test_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -27,4 +36,6 @@ ActiveRecord::Schema.define(version: 20180622074520) do
     t.string "name"
   end
 
+  add_foreign_key "passages", "sections"
+  add_foreign_key "sections", "tests"
 end

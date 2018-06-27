@@ -12,13 +12,17 @@ import { Http } from '@angular/http';
 export class TestComponent implements OnInit {
 tests;
 sections;
+passages;
 	studenttest: StudentTest[];
   constructor(private t: StudentTestService, private http: Http) {
 		http.get('http://localhost:3000/tests.json')
 		  		.subscribe(res=> this.tests = res.json());
     http.get('http://localhost:3000/sections.json')
-          .subscribe(res=> this.sections = res.json());      
+          .subscribe(res=> this.sections = res.json());
+    http.get('http://localhost:3000/passages.json')
+          .subscribe(res=> this.passages = res.json());           
    }
+
 
   ngOnInit() {
  		this.studenttest = this.t.getStudentTests();

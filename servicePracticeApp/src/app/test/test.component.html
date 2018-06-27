@@ -12,10 +12,15 @@
 
 <ul>
 	<li>This is from tests in db</li>
-  <li *ngFor="let test of tests">{{ test.name }} THIS IS AWESOME</li>
+  <li *ngFor="let test of tests">{{ test.name }} TESTS</li>
 </ul>
 
 <ul>
 	<li>Sections should be below</li>
-  <li *ngFor="let s of sections">{{ s.section }} THIS IS AWESOME</li>
+  <li *ngFor="let s of sections">{{ s.section }} GAP {{ s.test_id }} SECTIONS</li>
+</ul>
+
+<ul>
+  <li>Passages</li>
+  <li *ngFor="let p of passages">{{ p.name }} PASSAGES</li>
 </ul>
